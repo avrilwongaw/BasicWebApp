@@ -9,6 +9,12 @@ public class QueryProcessor {
                     "writer in the English language and the world's pre-eminent dramatist.";
         }
 
+        if (query.toLowerCase().contains("granada holmes")) {
+          return "\"I would've thought I was as trustworthy as your brother.\"\n\n" +
+                  "\"Of course you are, Watson!\n" +
+                  "\"......But you have a kinder heart.\"";
+        }
+
         if (query.toLowerCase().contains("imperial")) {
             return "Imperial College is a university in London";
         }
