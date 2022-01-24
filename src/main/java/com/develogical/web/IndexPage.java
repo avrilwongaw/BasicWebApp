@@ -8,6 +8,7 @@ public class IndexPage extends HtmlPage {
     protected void writeContentTo(PrintWriter writer) {
         writer.println(
                 "<h1>Welcome!</h1>" +
+                "<img src=\"https://64.media.tumblr.com/0e0b7cf246cf16481eec467f7792c5e1/tumblr_inline_qt4ul8HDdK1u52vn8_500.gif\">" +
                 "<p>Enter your query in the box below: " +
                   "<form><input type=\"text\" name=\"q\" />" +
                     "<input type=\"submit\">" +
