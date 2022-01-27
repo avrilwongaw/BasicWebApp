@@ -1,5 +1,10 @@
 package com.develogical;
 
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import java.util.stream.Collectors;
+
 public class QueryProcessor {
 
     public String process(String query) {
@@ -17,6 +22,14 @@ public class QueryProcessor {
 
         if (query.toLowerCase().contains("your name")) {
           return "Rigel";
+        }
+
+        if (query.toLowerCase().contains("largest")) {
+          query = query.toLowerCase();
+          String[] colons = query.split(":", 3);
+          String[] numbers = colons[colons.length - 1].split(",");
+          List<Integer> nums = Arrays.stream(numbers).map(String::strip).map(Integer::parseInt).collect(Collectors.toList());
+          return Collections.max(nums).toString();
         }
 
         if (query.toLowerCase().contains("imperial")) {

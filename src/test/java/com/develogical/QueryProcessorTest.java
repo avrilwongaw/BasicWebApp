@@ -31,6 +31,16 @@ public class QueryProcessorTest {
     }
 
     @Test
+    public void knowsAboutLargestNumber() throws Exception {
+      assertThat(queryProcessor.process("which of the following numbers is the largest: 35, 933, 72"), containsString("933"));
+    }
+
+//    @Test
+//    public void knowsAboutPlus() throws Exception {
+//      assertThat(queryProcessor.process("what is 7 plus 3"), containsString("10"));
+//    }
+
+    @Test
     public void knowsAboutImperial() throws Exception {
         assertThat(queryProcessor.process("Imperial"),
                 containsString("university"));
