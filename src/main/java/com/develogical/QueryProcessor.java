@@ -32,18 +32,45 @@ public class QueryProcessor {
           return Collections.max(nums).toString();
         }
 
-      if (query.toLowerCase().contains("plus")) {
-        query = query.toLowerCase();
-        String[] tokens = query.split(" ");
-        for (int i = 0; i < tokens.length; i++) {
-          if (tokens[i].equals("plus")) {
-            int num1 = Integer.parseInt(tokens[i - 1]);
-            int num2 = Integer.parseInt(tokens[i + 1]);
-            return String.valueOf(num1 + num2);
+        if (query.toLowerCase().contains("plus")) {
+          query = query.toLowerCase();
+          String[] tokens = query.split(" ");
+          for (int i = 0; i < tokens.length; i++) {
+            if (tokens[i].equals("plus")) {
+              int num1 = Integer.parseInt(tokens[i - 1]);
+              int num2 = Integer.parseInt(tokens[i + 1]);
+              return String.valueOf(num1 + num2);
+            }
           }
+          return "0";
         }
-        return "0";
-      }
+
+        if (query.toLowerCase().contains("minus")) {
+          query = query.toLowerCase();
+          String[] tokens = query.split(" ");
+          for (int i = 0; i < tokens.length; i++) {
+            if (tokens[i].equals("minus")) {
+              int num1 = Integer.parseInt(tokens[i - 1]);
+              int num2 = Integer.parseInt(tokens[i + 1]);
+              return String.valueOf(num1 - num2);
+            }
+          }
+          return "0";
+        }
+
+        if (query.toLowerCase().contains("multiplied")) {
+          query = query.toLowerCase();
+          String[] tokens = query.split(" ");
+          for (int i = 0; i < tokens.length; i++) {
+            if (tokens[i].equals("multiplied")) {
+              int num1 = Integer.parseInt(tokens[i - 1]);
+              // skip the "by"
+              int num2 = Integer.parseInt(tokens[i + 2]);
+              return String.valueOf(num1 * num2);
+            }
+          }
+          return "0";
+        }
 
         if (query.toLowerCase().contains("imperial")) {
             return "Imperial College is a university in London";
