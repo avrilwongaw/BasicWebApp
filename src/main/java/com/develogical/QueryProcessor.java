@@ -28,7 +28,7 @@ public class QueryProcessor {
           query = query.toLowerCase();
           String[] colons = query.split(":", 3);
           String[] numbers = colons[colons.length - 1].split(",");
-          List<Integer> nums = Arrays.stream(numbers).map(String::strip).map(Integer::parseInt).collect(Collectors.toList());
+          List<Integer> nums = Arrays.stream(numbers).map(String::trim).map(Integer::parseInt).collect(Collectors.toList());
           return Collections.max(nums).toString();
         }
 
