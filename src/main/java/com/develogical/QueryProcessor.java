@@ -10,9 +10,13 @@ public class QueryProcessor {
         }
 
         if (query.toLowerCase().contains("granada holmes")) {
-          return "\"I would've thought I was as trustworthy as your brother.\"\n\n" +
-                  "\"Of course you are, Watson!\n" +
-                  "\"......But you have a kinder heart.\"";
+          return "\"I would've thought I was as trustworthy as your brother.\"" +
+                  "\"Of course you are, Watson!" +
+                  "......But you have a kinder heart.\"";
+        }
+
+        if (query.toLowerCase().contains("your name")) {
+          return "Rigel";
         }
 
         if (query.toLowerCase().contains("imperial")) {
